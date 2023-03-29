@@ -78,8 +78,8 @@ Site.Section.PaginationItem = function () {
 
     this.init = function () {
         this.item = document.createElement("li");
-        this.link = document.createElement("a");
-        this.span = document.createElement("span");
+        this.link = document.createElement("div");
+        this.span = document.createElement("div");
         this.item.appendChild(this.link);
         this.link.appendChild(this.span);
         return this;

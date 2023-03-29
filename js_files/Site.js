@@ -3,7 +3,7 @@
 var Site = Site || {};
 Site = {
     dataManager: null,
-    formManager: null,
+    // formManager: null,
     scrollManager: null,
     canvasManager: null,
     modelManager: null,
@@ -27,8 +27,8 @@ Site = {
         Site.scrollManager = new Site.ScrollManager();
         Site.modelManager = new Site.ModelManager();
         Site.dataManager = new Site.DataManager();
-        Site.formManager = new Site.FormManager();
-        Site.formManager.init();
+        // Site.formManager = new Site.FormManager();
+        // Site.formManager.init();
 
         Site.canvasManager.init(Site.canvas);
 
@@ -67,8 +67,8 @@ Site = {
     },
 
     addEventListeners: function () {
-        Site.scrollManager.sectionChangeSignal.add(Site, Site.formManager.showForm);
-        Site.formManager.formSubmitSignal.add(Site, Site.formDidSubmit);
+        // Site.scrollManager.sectionChangeSignal.add(Site, Site.formManager.showForm);
+        // Site.formManager.formSubmitSignal.add(Site, Site.formDidSubmit);
         Site.modelManager.loadSignal.add(Site, Site.modelsDidLoad);
         Site.dataManager.loadSignal.add(Site, Site.dataDidLoad);
 
@@ -98,15 +98,15 @@ Site = {
                 Site.updateCanvas();
             }, 200));
 
-            Site.formManager.requestButton.addEventListener("click", function (ev) {
-                ev.preventDefault();
-                if (Site.formManager.requestButton.classList.contains("submit")) {
-                    Site.formManager.requestFormSubmit();
-                } else {
-                    Site.scrollManager.didSelectSection(Site.scrollManager.sections[5]);
-                }
-                return false;
-            });
+            // Site.formManager.requestButton.addEventListener("click", function (ev) {
+            //     ev.preventDefault();
+            //     if (Site.formManager.requestButton.classList.contains("submit")) {
+            //         Site.formManager.requestFormSubmit();
+            //     } else {
+            //         Site.scrollManager.didSelectSection(Site.scrollManager.sections[5]);
+            //     }
+            //     return false;
+            // });
 
             window.addEventListener("scroll", Site.scrollManager.mouseWheelHide);
         }

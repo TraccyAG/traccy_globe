@@ -50,7 +50,7 @@ Stationary content
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 20px 2.5% 20px 11%;
     box-sizing: border-box;
 }
 
@@ -115,7 +115,7 @@ Stationary content
 .social-icons{
     position: fixed;
     bottom: 30px;
-    right: 40px;
+    right: 2.5%;
     display: flex;
     align-items: center;
     color: #ffffff;
@@ -243,7 +243,7 @@ p.viz-caption a:hover svg {
     margin: 5vh 0 0 -10px;
 }
 
-#pagination-dots a {
+#pagination-dots div {
     position: relative;
     display: block;
     width: 20px;
@@ -253,16 +253,16 @@ p.viz-caption a:hover svg {
     transition: transform 1.5s cubic-bezier(0.24, 1.45, 0.24, 0.98);
 }
 
-#pagination-dots li {
+#pagination-dots div {
     cursor: pointer;
 }
 
-.desktop #pagination-dots a:hover {
+.desktop #pagination-dots>li>div:hover {
     opacity: 1.0;
     transform: scale(1.6);
 }
 
-#pagination-dots a span {
+#pagination-dots div div {
     position: absolute;
     display: block;
     top: 50%;
@@ -272,9 +272,10 @@ p.viz-caption a:hover svg {
     background: white;
     border-radius: 50%;
     transform: translate3d(-50%, -50%, 0);
+    box-shadow: 0px 0px 8px 3px white;
 }
 
-#pagination-dots li.selected a {
+#pagination-dots li.selected div {
     opacity: 1.0;
     /* border: 1px solid white; */
     /* border-radius: 50%; */
@@ -391,6 +392,7 @@ only screen and (min-resolution: 120dpi) {
 #scrolling-content {
     position: relative;
     top: 0;
+    padding-top: 50px;
     width: 100%;
 }
 
@@ -416,7 +418,7 @@ only screen and (min-resolution: 120dpi) {
 .copy-section h1 {
     margin: 32px 0;
     font-size: 64px;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: -0.1vw;
     line-height: 1em;
     color: #8A0E51;
