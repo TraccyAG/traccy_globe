@@ -232,9 +232,12 @@ Site.ScrollManager = function () {
     };
 
     this.getScrollPercent = function () {
-        if (!content) return 0.0;
-        let h = content.offsetHeight - Site.wh;
-        var p = window.pageYOffset / h;
+        let scrollingWrapper = document.getElementById("scrolling-wrapper")
+        let p =
+            ($(scrollingWrapper).scrollTop() / (scrollingWrapper.scrollHeight - $(window).height()));
+        // if (!content) return 0.0;
+        // let h = content.offsetHeight - Site.wh;
+        // var p = window.pageYOffset / h;
         return p;
     };
 

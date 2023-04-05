@@ -317,7 +317,7 @@
         }
       }
     </style>
-    <div>
+    <!-- <div>
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -347,7 +347,7 @@
           />
         </g>
       </svg>
-    </div>
+    </div> -->
     <div id="scrolling-wrapper">
       <div id="scrolling-content">
         <div id="scrolling-area">
@@ -727,17 +727,26 @@
     src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"
   ></script>
   <script type="text/javascript">
+
     $(document).ready(function () {
       var $dashOffset = $(".gauge-path").css("stroke-dashoffset");
-      let scrollingWrapper = document.getElementById("scrolling-wrapper")
+      let scrollingWrapper = document.getElementById("scrolling-wrapper");
       $(scrollingWrapper).scroll(function () {
         var $percentageComplete =
-          ($(scrollingWrapper).scrollTop() / (scrollingWrapper.scrollHeight - $(window).height())) *
+          ($(scrollingWrapper).scrollTop() /
+            (scrollingWrapper.scrollHeight - $(window).height())) *
           27;
         var $newUnit = parseInt($dashOffset, 10);
         var $offsetUnit = $percentageComplete * ($newUnit / 100);
         $(".gauge-path").css("stroke-dashoffset", $newUnit - $offsetUnit);
       });
+
+      let request = document.getElementById("request");
+      $(request).click(function(){
+        console.log("click")
+        console.log(Site.isCollapse)
+        Site.isCollapse = !Site.isCollapse;
+      })
     });
   </script>
 

@@ -61,8 +61,14 @@ Site.CanvasManager = function () {
         var m = self.globe.modelMatrix;
         mat4.identity(m);
         // make -500 to higher value -650 to make globe small
-        mat4.translate(m, m, [8.3, 0.0, -500.0]);
-        mat4.scale(m, m, [18.0, 18.0, 18.0]);
+        if (Site.isCollapse) {
+            let scale = window.innerWidth / 1024 * 18;
+            mat4.translate(m, m, [0, -18, -500.0]);
+            mat4.scale(m, m, [scale, scale, scale]);
+        } else {
+            mat4.translate(m, m, [8.3, 0.0, -500.0]);
+            mat4.scale(m, m, [18.0, 18.0, 18.0]);
+        }
         mat4.rotateX(m, m, sinTime);
         mat4.rotateY(m, m, slowTime);
 
@@ -75,8 +81,16 @@ Site.CanvasManager = function () {
 
         m = self.ring.modelMatrix;
         mat4.identity(m);
-        mat4.translate(m, m, [9.0, 0.0, -550.0]);
-        mat4.scale(m, m, [22.0, 22.0, 22.0]);
+
+        if (Site.isCollapse) {
+            let scale = window.innerWidth / 1024 * 21;
+            mat4.translate(m, m, [0, -20, -550.0]);
+            mat4.scale(m, m, [scale, scale, scale]);
+        } else {
+            mat4.translate(m, m, [9.0, 0.0, -550.0]);
+            mat4.scale(m, m, [21.0, 21.0, 21.0]);
+        }
+
         mat4.rotateY(m, m, 0);
         mat4.rotateX(m, m, 0);
         mat4.rotateZ(m, m, -0.8)

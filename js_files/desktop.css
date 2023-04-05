@@ -122,10 +122,9 @@ Stationary content
   font-weight: lighter;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 767px) {
   .social-icons {
-    bottom: 110px;
-    right: 20px;
+    display: none;
   }
   .header .logo-mark {
     padding: 0 !important;
@@ -300,10 +299,13 @@ p.viz-caption a:hover svg {
   display: flex;
   align-items: center;
   cursor: pointer;
-  @media screen and (max-width: 640px) {
-    font-size: 13px;
+}
+@media screen and (max-width: 767px) {
+  #request {
+    /* display: none; */
   }
 }
+
 #request::before {
   width: 60px;
   height: 100%;
@@ -412,6 +414,11 @@ Copy area
 
 #scrolling-area {
   padding: 25vh 0 25vh 0;
+}
+@media screen and (max-width: 767px) {
+  #scrolling-area {
+    padding: 10vh 0px;
+  }
 }
 
 .copy-section {

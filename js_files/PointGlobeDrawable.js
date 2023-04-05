@@ -125,7 +125,7 @@ GK.PointGlobeDrawable = function () {
     this.shaderSpeed = 0.00001;
 
     this.ringHeight = 0.04;
-    this.ringWidth = 0.04;
+    this.ringWidth = 0.1;
     this.ringProgress = 0.0;
     this.ringEffectStr = 1.0;
     this.ringVariety = 0.0;
