@@ -132,6 +132,12 @@ Site = {
                 Site.canvasManager.ring.progress = Site.scrollManager.getScrollPercent();
                 Site.scrollManager.windowDidScroll();
             });
+            
+            let scrollingWrapper = document.getElementById("scrolling-wrapper");
+            scrollingWrapper.addEventListener("scroll", function () {
+                Site.canvasManager.ring.progress = Site.scrollManager.getScrollPercent();
+                Site.scrollManager.windowDidScroll();
+            });
 
             if (document.body.scrollTop == 0) {
                 document.getElementById("mouse-wheel").classList.add("visible");

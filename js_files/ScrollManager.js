@@ -153,14 +153,18 @@ Site.ScrollManager = function () {
     };
 
     this.windowDidScroll = function () {
-        var windowTop = window.pageYOffset;
+        let scrollingWrapper = document.getElementById("scrolling-wrapper");
+
+        var windowTop = scrollingWrapper.scrollTop;
         var windowMid = windowTop + Site.wh * 0.5;
         var windowBot = windowTop + Site.wh;
+
 
         var deltas = [];
         for (i = 0; i < this.sections.length; i++) {
             var section = this.sections[i];
             var itemMid = section.rect.top + section.rect.height * 0.9;
+
             var delta = Math.abs(itemMid - windowMid);
             delta = Math.max(delta - Site.wh * 0.25, 0.0);
             section.div.style.opacity = Math.pow(1.0 - (delta / (Site.wh * 0.5)), 4.0);
@@ -204,13 +208,15 @@ Site.ScrollManager = function () {
         if (scrollAnim) scrollAnim.stop();
         scrollAnim = new Animation(0.2);
 
-        var scrollStart = window.pageYOffset;
+        let scrollingWrapper = document.getElementById("scrolling-wrapper");
+
+        var scrollStart = scrollingWrapper.scrollTop;
         var scrollEnd = section.rect.top + section.rect.height * 0.5 - Site.wh * 0.5;
         var scrollDelta = scrollEnd - scrollStart;
 
         scrollAnim.updateFn = function (value) {
             var v = BK.Ease.outSine(value);
-            window.scrollTo(0, scrollStart + scrollDelta * v);
+            scrollingWrapper.scrollTo(0, scrollStart + scrollDelta * v);
         }
         scrollAnim.completeFn = function (valueWhenCompleted) {
             scrollAnim = null;
