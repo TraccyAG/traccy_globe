@@ -743,9 +743,24 @@
 
       let request = document.getElementById("request");
       $(request).click(function(){
-        console.log("click")
-        console.log(Site.isCollapse)
         Site.isCollapse = !Site.isCollapse;
+
+        clearInterval(Site.scaleTimer);
+        Site.scaleTimer = setInterval(function(){
+          console.log(Site.scale)
+
+          if(Site.isCollapse){
+            if(Site.scale > 0)
+              Site.scale -= 0.1;
+            else
+              clearInterval(Site.scaleTimer);
+          }else{
+            if(Site.scale < 1)
+              Site.scale += 0.1;
+            else
+              clearInterval(Site.scaleTimer);
+          }
+        }, 100);
       })
     });
   </script>

@@ -268,6 +268,8 @@ Site = {
 Site.isMobile = (window.orientation !== undefined) || (navigator.userAgent.indexOf("IEMobile") !== -1);
 Site.isDesktop = !Site.isMobile;
 Site.isCollapse = Site.isMobile;
+Site.scale = Site.isCollapse? 0 : 1;
+
 Site.debounce = function debounce(func, wait, immediate) {
     var timeout;
     return function () {
