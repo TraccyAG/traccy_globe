@@ -24,23 +24,6 @@ Small format layout
         margin: 0 0 0 20px;
     }
 
-    #request {
-        top: auto;
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        width: auto;
-        padding: 20px 0;
-        transform: none;
-        font-size: 18px;
-    }
-    #request:before {
-        box-shadow: none;
-    }
-    #request.submit {
-        width: auto;
-    }
-
     #pagination {
         right: 22px;
         transform: none;

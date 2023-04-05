@@ -728,19 +728,14 @@
   ></script>
   <script type="text/javascript">
     $(document).ready(function () {
-      //variable for the 'stroke-dashoffset' unit
       var $dashOffset = $(".gauge-path").css("stroke-dashoffset");
-      //on a scroll event - execute function
-      $(window).scroll(function () {
-        //calculate how far down the page the user is
+      let scrollingWrapper = document.getElementById("scrolling-wrapper")
+      $(scrollingWrapper).scroll(function () {
         var $percentageComplete =
-          ($(window).scrollTop() / ($("html").height() - $(window).height())) *
+          ($(scrollingWrapper).scrollTop() / (scrollingWrapper.scrollHeight - $(window).height())) *
           27;
-        //convert dashoffset pixel value to interger
         var $newUnit = parseInt($dashOffset, 10);
-        //get the value to be subtracted from the 'stroke-dashoffset'
         var $offsetUnit = $percentageComplete * ($newUnit / 100);
-        //set the new value of the dashoffset to create the drawing effect
         $(".gauge-path").css("stroke-dashoffset", $newUnit - $offsetUnit);
       });
     });
@@ -751,7 +746,6 @@
       jQuery(window).resize(function () {
         setTimeout(function () {
           let box = document.querySelector("#globekit-canvas");
-          console.log(box);
           let width = box.width;
           let height = box.height;
 
@@ -763,7 +757,6 @@
 
       setTimeout(function () {
         let box = document.querySelector("#globekit-canvas");
-        console.log(box);
         let width = box.width;
         let height = box.height;
 

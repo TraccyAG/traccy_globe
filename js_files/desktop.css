@@ -299,7 +299,7 @@ p.viz-caption a:hover svg {
   padding: 20px 20px;
   display: flex;
   align-items: center;
-
+  cursor: pointer;
   @media screen and (max-width: 640px) {
     font-size: 13px;
   }
