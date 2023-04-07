@@ -50,7 +50,7 @@ Stationary content
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 2.5% 20px 11%;
+  padding: 20px 3% 20px 11%;
   box-sizing: border-box;
 }
 
@@ -115,7 +115,7 @@ Stationary content
 .social-icons {
   position: fixed;
   bottom: 30px;
-  right: 2.5%;
+  right: 5.5vw;
   display: flex;
   align-items: center;
   color: #ffffff;
