@@ -50,7 +50,7 @@ Stationary content
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 5.5vw 20px 11%;
+  padding: 20px 5.5vw;
   box-sizing: border-box;
 }
 
@@ -289,7 +289,7 @@ p.viz-caption a:hover svg {
   display: block;
   z-index: 10;
   bottom: 44px;
-  left: 11%;
+  left: 5.5vw;
   width: 279px;
 
   border: 2px solid #be1e73;
@@ -405,7 +405,7 @@ Copy area
   position: absolute;
   inset: 0;
   overflow-y: scroll;
-  clip-path: polygon(90% 0px, 100% 0, 100% 100%, 0% 100%, 0 76px, 90% 76px);
+  clip-path: polygon(90% 0px, 100% 0, 100% 80%, 0% 80%, 0 76px, 90% 76px);
 }
 #scrolling-content {
   position: relative;
@@ -433,7 +433,7 @@ Copy area
 .copy-content {
   position: absolute;
   top: 50%;
-  left: 11%;
+  left: 5.5vw;
   padding: 0 0 74px 0;
   transform: translateY(-50%);
 }
