@@ -127,7 +127,7 @@
         /*margin-left: -130px;*/
         /*margin-top: -130px;*/
         /*transform: rotate(180deg);*/
-        top: 4.18vh;
+        top: 5.18vh;
         left: 23vh;
       }
       .gauge-path {
@@ -317,7 +317,7 @@
         }
       }
     </style>
-    <!-- <div>
+    <div>
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -328,7 +328,7 @@
         enable-background="new 0 0 260 260"
         xml:space="preserve"
         class="gauge-svg"
-        style="position: fixed; height: 725px"
+        style="position: fixed; height: 740px"
         id="svg_id"
       >
         <g>
@@ -347,7 +347,7 @@
           />
         </g>
       </svg>
-    </div> -->
+    </div>
     <div id="scrolling-wrapper">
       <div id="scrolling-content">
         <div id="scrolling-area">
@@ -533,8 +533,9 @@
       </div>
     </div>
 
-    <button id="request">
-      Request a Quote
+    <a href="https://traccy.vercel.app/home" target="_blank">
+    <button id="request" >
+      Learn More
       <div class="icon">
         <svg
           width="13"
@@ -558,6 +559,7 @@
         </svg>
       </div>
     </button>
+  </a>
 
     <div class="social-icons">
       <div>Share</div>
@@ -701,8 +703,8 @@
       jQuery(window).resize(function () {
         setTimeout(function () {
           let box = document.querySelector("#globekit-canvas");
-          let width = box.width;
-          let height = box.height;
+          let width = box.width - 10;
+          let height = box.height - 10;
 
           let svg_id_var = document.querySelector("#svg_id");
           svg_id_var.style.height = height + "px";
@@ -712,8 +714,8 @@
 
       setTimeout(function () {
         let box = document.querySelector("#globekit-canvas");
-        let width = box.width;
-        let height = box.height;
+        let width = box.width - 10;
+        let height = box.height - 10;
 
         let svg_id_var = document.querySelector("#svg_id");
         svg_id_var.style.height = height + "px";
