@@ -194,7 +194,7 @@ Site.CanvasManager = function () {
     }
 
     this.updateQuakeInfo = function (quake) {
-        self.quakeInfoSpan.innerHTML = "<strong>Location " +
+        self.quakeInfoSpan.innerHTML = "<strong>" +
             quake.data.properties.mag + "</strong>" +
             quake.data.properties.place;
     }

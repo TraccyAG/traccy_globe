@@ -21,7 +21,7 @@ Site.DataManager = function () {
                 // self.loadSignal.fire();
                 // console.log(self);
                 for (var i = 0; i < locationData.length; i++) {
-                    var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], i);
+                    var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], locationData[i]["project"] i);
                     self.earthquakes.push(new Site.DataManager.Earthquake(feature));
                 }
                 // console.log(self.earthquakes[0]);
@@ -57,11 +57,11 @@ var locationData = [
     { "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution"}
 ];
 
-function locationToData(cord, country, index) {
+function locationToData(cord, country, project, index) {
     return {
         "type": "Feature",
         "properties": {
-            "mag": index + 1,
+            "mag": project,
             "place": country,
             "time": 1668608610763,
             "updated": 1668610186040,
