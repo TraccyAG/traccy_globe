@@ -710,7 +710,7 @@
               r.domElement.id = "labels";
               r.domElement.style.position = "absolute";
               r.domElement.style.top = "0px";
-              r.domElement.style.pointerEvents = "none";
+              //r.domElement.style.pointerEvents = "none";
             }
             document.getElementById("globeViz").appendChild(r.domElement);
           });
@@ -882,7 +882,7 @@
           }
         }
       };
-      setInterval(handleMarker, 1000);
+      setInterval(handleMarker, 2000);
       //const targetNode = document.getElementById("globeViz");
       //const config = { attributes: true, childList: true, subtree: true };
       //const callback = (mutationList, observer) => {

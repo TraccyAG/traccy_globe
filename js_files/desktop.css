@@ -927,7 +927,7 @@ Animation Keyframs
 }
 
 #labels {
-  opacity: 1;
+  opacity: 0;
   transition: all 0.5s ease;
 }
 .label {
