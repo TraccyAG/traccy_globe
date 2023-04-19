@@ -108,7 +108,7 @@ Site.PaginationText = function () {
 
     this.setIndex = function (index) {
         if (this.currentIndex != index) {
-            var translate = index * -20.0;
+            var translate = index * (Site.isMobile?-40 : -20.0);
             onesColumn.style.transform = "translate3d(0, " + translate + "vw, 0)";
             this.currentIndex = index;
         }

@@ -24,10 +24,10 @@ Site.DataManager = function () {
                     var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], i);
                     self.earthquakes.push(new Site.DataManager.Earthquake(feature));
                 }
-                console.log(self.earthquakes[0]);
+                // console.log(self.earthquakes[0]);
 
                 self.loadSignal.fire();
-                console.log(self);
+                // console.log(self);
             }
         });
 
@@ -46,7 +46,16 @@ Site.DataManager.Earthquake = function (data) {
     this.pos = GK.LatLng.toWorld(this.latLng);
 }
 
-var locationData = [{ "country": "Switzerland", "cord": [8.22, 46.8, 10] }, { "country": "Congo", "cord": [21.75, 4.0, 10] }, { "country": "Burundi", "cord": [29.91, 3.37, 10] }, { "country": "Kenya", "cord": [37.90, 0.023, 10] }, { "country": "Gabon", "cord": [11.60, 0.80, 10] }];
+var locationData = [
+    { "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy AG" }, 
+    { "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy Connect" }, 
+    { "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Traccy Solar" }, 
+    { "country": "Indonesia(jakarta)", "cord": [6.2, 106.8, 10], "project": "Lynx VR" }, 
+    { "country": "Indonesia(Semarang)", "cord": [110.4, 7, 10], "project": "Green Protocol" }, 
+    { "country": "Indonesia(Megalang)", "cord": [110.2, 7.4, 10], "project": "DecentaCity" }, 
+    { "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Tomato Project" }, 
+    { "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution"}
+];
 
 function locationToData(cord, country, index) {
     return {

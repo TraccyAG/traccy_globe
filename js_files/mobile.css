@@ -29,11 +29,11 @@ Small format layout
         transform: none;
     }
     #pagination-text {
-        display: none;
+        /* display: none; */
     }
     #pagination-dots {
-        position: relative;
-        margin: 28px 0 0 -10px;
+        /* position: relative;
+        margin: 28px 0 0 -10px; */
     }
 
     #mouse-indicator {
@@ -46,13 +46,15 @@ Small format layout
 
     .copy-section h1 {
         font-size: 40px;
-        font-weight: 200;
+        font-weight: 700;
         margin: 30px 0;
+        color: black;
     }
     .copy-section p {
         font-size: 16px;
         margin: 20px 0;
         line-height: 1.7em;
+        max-width: 250px;
     }
     .copy-section span.emdash {
         padding: 0 0 0 60px;
@@ -98,7 +100,7 @@ Content height no longer tied to vh
     }
     .copy-section {
         height: auto;
-        margin: 268px 0;
+        margin: 70px 0;
     }
     .copy-section.topic-form {
         margin-bottom: 134px;
@@ -113,7 +115,7 @@ Content height no longer tied to vh
 
 @media screen and (max-height: 667px) and (max-width: 767px) {
     .copy-section {
-        margin: 234px 0;
+        margin: 70px 0;
     }
     .copy-section.topic-form {
         margin-bottom: 117px;
@@ -124,7 +126,7 @@ Content height no longer tied to vh
 
 @media screen and (max-height: 568px) and (max-width: 767px) {
     .copy-section {
-        margin: 120px 0;
+        margin: 70px 0;
     }
     .mobile .copy-section.topic-quote {
         margin-bottom: 170px;

@@ -2,6 +2,18 @@
 General
 ////////////////////////////////////*/
 
+#globeViz {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  #globekit-canvas {
+    display: none;
+  }
+  #globeViz {
+    display: block;
+  }
+}
+
 html,
 body {
   font: 16px "Roboto", sans-serif;
@@ -45,7 +57,7 @@ Stationary content
 .header {
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 13;
   transform: translateZ(0);
   display: flex;
   align-items: center;
@@ -69,6 +81,11 @@ Stationary content
 .header .right-menu svg {
   display: block;
   width: 20px;
+}
+@media screen and (max-width: 767px) {
+  .header .right-menu svg {
+    fill: black;
+  }
 }
 
 .header .logo-mark img {
@@ -158,14 +175,24 @@ Stationary content
   top: 40%;
   right: 2.5%;
   transform: translate3d(0, -50%, 0);
+  transition: all 0.5s ease;
 }
-
+@media screen and (max-width: 767px) {
+  #pagination {
+    top: 50%;
+    right: 0%;
+  }
+}
 #pagination-text {
   font-size: 0;
   font-weight: 100;
   color: #fff;
 }
-
+@media screen and (max-width: 767px) {
+  #pagination-text {
+    color: black;
+  }
+}
 #page-count-tens,
 #page-count-ones {
   display: inline-block;
@@ -173,7 +200,13 @@ Stationary content
   overflow: hidden;
   vertical-align: bottom;
 }
-
+@media screen and (max-width: 767px) {
+  #page-count-tens,
+  #page-count-ones {
+    font-family: "Londrina Outline";
+    height: 40vw;
+  }
+}
 #pagination-text .page-numbers {
   transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -187,14 +220,24 @@ Stationary content
   font-size: 15vw;
   line-height: 22vw;
 }
-
+@media screen and (max-width: 767px) {
+  #pagination-text .page-number {
+    height: 40vw;
+    font-size: 40vw;
+    line-height: 40vw;
+  }
+}
 #page-count-total {
   font-size: 24px;
   display: block;
   margin: -3vw 0 0 0;
   padding: 0 0 0 0.4em;
 }
-
+@media screen and (max-width: 767px) {
+  #page-count-total {
+    display: none;
+  }
+}
 /* Pagination (caption) */
 
 p.viz-caption {
@@ -242,6 +285,11 @@ p.viz-caption a:hover svg {
   left: 50%;
   margin: 5vh 0 0 -10px;
 }
+@media screen and (max-width: 767px) {
+  #pagination-dots {
+    display: none;
+  }
+}
 
 #pagination-dots div {
   position: relative;
@@ -252,13 +300,12 @@ p.viz-caption a:hover svg {
   box-sizing: border-box;
   transition: transform 1.5s cubic-bezier(0.24, 1.45, 0.24, 0.98);
   cursor: pointer;
-  
 }
 
 .desktop #pagination-dots > li > div:hover {
   opacity: 1;
 }
-.desktop #pagination-dots > li > div:hover div{
+.desktop #pagination-dots > li > div:hover div {
   box-shadow: 0px 0px 8px 3px white;
 }
 
@@ -279,6 +326,7 @@ p.viz-caption a:hover svg {
   border: 1px solid white;
   border-radius: 50%;
 }
+
 #pagination-dots li.selected div div {
   box-shadow: none;
 }
@@ -286,11 +334,14 @@ p.viz-caption a:hover svg {
 
 #request {
   position: absolute;
-  display: block;
   z-index: 10;
-  bottom: 44px;
+  bottom: 46px;
   left: 5.5vw;
   width: 279px;
+  height: 67px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
 
   border: 2px solid #be1e73;
   background: none;
@@ -302,14 +353,14 @@ p.viz-caption a:hover svg {
   align-items: center;
   cursor: pointer;
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   #request {
-    /* display: none; */
+    display: none;
   }
 }
 
 #request::before {
-  width: 60px;
+  width: 85px;
   height: 100%;
   content: " ";
   position: absolute;
@@ -319,7 +370,7 @@ p.viz-caption a:hover svg {
   background: #e31e5380;
   transition: all ease-in 1s;
   opacity: 1;
-  max-height: 60px;
+  max-height: 67px;
   z-index: 0;
 }
 
@@ -337,7 +388,7 @@ p.viz-caption a:hover svg {
   background: transparent;
   fill: white;
   height: 100%;
-  margin-left: 130px;
+  margin-left: 100px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -405,7 +456,31 @@ Copy area
   position: absolute;
   inset: 0;
   overflow-y: scroll;
-  clip-path: polygon(90% 0px, 100% 0, 100% 80%, 0% 80%, 0 76px, 90% 76px);
+  clip-path: polygon(
+    50% 0px,
+    100% 0,
+    100% 100%,
+    50% 100%,
+    50% 80%,
+    0% 80%,
+    0 150px,
+    50% 150px
+  );
+  z-index: 11;
+}
+@media screen and (max-width: 767px) {
+  #scrolling-wrapper {
+    clip-path: polygon(
+      80% 0px,
+      100% 0,
+      100% 100%,
+      80% 100%,
+      80% 50%,
+      0% 50%,
+      0 150px,
+      80% 150px
+    );
+  }
 }
 #scrolling-content {
   position: relative;
@@ -805,4 +880,70 @@ Animation Keyframs
   85% {
     transform: translateY(3px);
   }
+}
+
+#zoom {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  z-index: 12;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  #zoom {
+    display: block;
+  }
+}
+
+#globeViz {
+  position: absolute;
+  left: 50%;
+  bottom: -15vw;
+  transform: translate(-50%, 3%);
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
+#mobile-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: pink;
+  overflow: hidden;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  #mobile-wrapper {
+    display: block;
+  }
+}
+#mask {
+  position: absolute;
+  width: 100vw;
+  height: 30vw;
+  bottom: 0;
+  background: #655068;
+  transition: all 0.5s ease;
+}
+
+#labels {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label .expanded{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  transform: translate(0, 50%);
+}
+
+.label .expanded span{
+  white-space: nowrap;
 }
