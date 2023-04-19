@@ -674,8 +674,6 @@
             .htmlElementsData(gData)
             .htmlElement((d) => {
               const el = document.createElement("div");
-              //el.innerHTML = markerSvg;
-
               const markerSvg = `<svg viewBox="-4 0 36 36" color="${d.color}"" width="${d.size}px"">
                 <path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"></path>
                 <circle fill="black" cx="14" cy="14" r="7"></circle>
@@ -685,7 +683,9 @@
                 ${markerSvg}
                 <div class="expanded" id="label_${d.id}">
                   <span>${d.project}</span>
-                  <span>${d.country}</span>
+                  <h1>${d.country}</h1>
+                  <div class="splitter"></div>
+                  <h2>Operated 2245 sola. Last contact Nov 11,1982</h2>
                 </div>
               </div>`;
               return el;
@@ -710,7 +710,7 @@
               r.domElement.id = "labels";
               r.domElement.style.position = "absolute";
               r.domElement.style.top = "0px";
-              //r.domElement.style.pointerEvents = "none";
+              r.domElement.style.pointerEvents = "none";
             }
             document.getElementById("globeViz").appendChild(r.domElement);
           });
@@ -863,10 +863,15 @@
 
   <script>
     $(document).ready(function () {
+      var id = 1;
       const handleMarker = (e) => {
         const labels = document.getElementsByClassName("label");
+        if(!labels) return;
+
+        id += 1;
+        if(id > 8) id = 1;
         for(let i=0; i<labels.length; i++){
-          if(labels[i].contains(e.target)){
+          if(labels[i].id == id.toString()){
             const labelId = "label_" + labels[i].id;
             const label = document.getElementById(labelId);
             label.style.display = "flex";
@@ -877,25 +882,24 @@
           }
         }
       };
-
-      const targetNode = document.getElementById("globeViz");
-      const config = { attributes: true, childList: true, subtree: true };
-      console.log(targetNode);
-      const callback = (mutationList, observer) => {
-        for (const mutation of mutationList) {
-          if (mutation.type === "childList") {
-            const labels = document.getElementsByClassName("label");
-            console.log(labels)
-            if (labels && labels.length > 0) {
-              for(let i=0; i<labels.length; i++){
-                labels[i].addEventListener("mousedown", handleMarker)
-              }
-            }
-          }
-        }
-      };
-      const observer = new MutationObserver(callback);
-      observer.observe(targetNode, config);
+      setInterval(handleMarker, 1000);
+      //const targetNode = document.getElementById("globeViz");
+      //const config = { attributes: true, childList: true, subtree: true };
+      //const callback = (mutationList, observer) => {
+      //  for (const mutation of mutationList) {
+      //    if (mutation.type === "childList") {
+      //      const labels = document.getElementsByClassName("label");
+      //      console.log(labels)
+      //      if (labels && labels.length > 0) {
+      //        for(let i=0; i<labels.length; i++){
+      //          labels[i].addEventListener("mousedown", handleMarker)
+      //        }
+      //      }
+      //    }
+      //  }
+      //};
+      //const observer = new MutationObserver(callback);
+      //observer.observe(targetNode, config);
     });
   </script>
 </html>
