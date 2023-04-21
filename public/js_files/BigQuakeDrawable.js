@@ -121,7 +121,7 @@ GK.BigQuakeDrawable = function(){
 
         gl.vertexAttribPointer(this.program.attributes.aPosition, 3, gl.FLOAT, false, 12, 0);
         gl.enableVertexAttribArray(this.program.attributes.aPosition);
-
+console.log(vertices)
         gl.drawArrays(gl.POINTS, 0, vertices.length / 3);
     }
 }

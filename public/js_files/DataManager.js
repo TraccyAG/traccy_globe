@@ -3,7 +3,7 @@
 var Site = Site || {};
 Site.DataManager = function () {
     var self = this;
-    var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson";
+    var url = "./js_files/4.5_month.geojson";
     this.earthquakes = [];
     this.loadSignal = new BK.Signal();
 
@@ -24,7 +24,6 @@ Site.DataManager = function () {
                     var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], locationData[i]["project"], i);
                     self.earthquakes.push(new Site.DataManager.Earthquake(feature));
                 }
-                // console.log(self.earthquakes[0]);
 
                 self.loadSignal.fire();
                 // console.log(self);
@@ -50,7 +49,7 @@ var locationData = [
     { "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy AG" }, 
     { "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy Connect" }, 
     { "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Traccy Solar" }, 
-    { "country": "Indonesia(jakarta)", "cord": [6.2, 106.8, 10], "project": "Lynx VR" }, 
+    { "country": "Indonesia(jakarta)", "cord": [106.8, 6.2,10], "project": "Lynx VR" }, 
     { "country": "Indonesia(Semarang)", "cord": [110.4, 7, 10], "project": "Green Protocol" }, 
     { "country": "Indonesia(Megalang)", "cord": [110.2, 7.4, 10], "project": "DecentaCity" }, 
     { "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Tomato Project" }, 

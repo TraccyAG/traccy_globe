@@ -80,7 +80,6 @@ GK.EarthquakeDrawable = function () {
 
     this.createGeometry = function (earthquakes) {
         var vertexArray = [];
-
         for (var i = 0; i < earthquakes.length; i++) {
             var e = earthquakes[i];
             vertexArray.push(e.pos[0]);
