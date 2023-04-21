@@ -409,7 +409,7 @@
 
     <a href="https://traccy.vercel.app/home" target="_blank">
       <button id="request">
-        Learn More
+        <span> Learn More </span>
         <div class="icon">
           <svg
             width="13"
@@ -866,12 +866,12 @@
       var id = 1;
       const handleMarker = (e) => {
         const labels = document.getElementsByClassName("label");
-        if(!labels) return;
+        if (!labels) return;
 
         id += 1;
-        if(id > 8) id = 1;
-        for(let i=0; i<labels.length; i++){
-          if(labels[i].id == id.toString()){
+        if (id > 8) id = 1;
+        for (let i = 0; i < labels.length; i++) {
+          if (labels[i].id == id.toString()) {
             const labelId = "label_" + labels[i].id;
             const label = document.getElementById(labelId);
             label.style.display = "flex";
