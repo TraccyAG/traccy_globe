@@ -83,11 +83,11 @@ Stationary content
   display: block;
   width: 20px;
 }
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   .header .right-menu svg {
     fill: black;
   }
-}
+} */
 
 .header .logo-mark img {
   max-height: 45px;
