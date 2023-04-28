@@ -207,7 +207,7 @@ Stationary content
 }
 @media screen and (max-width: 767px) {
   #pagination-text {
-    color: black;
+    /* color: black; */
   }
 }
 #page-count-tens,
@@ -220,7 +220,7 @@ Stationary content
 @media screen and (max-width: 767px) {
   #page-count-tens,
   #page-count-ones {
-    font-family: "Londrina Outline";
+    /* font-family: "Londrina Outline"; */
     height: 40vw;
   }
 }
@@ -301,6 +301,7 @@ p.viz-caption a:hover svg {
   position: absolute;
   left: 50%;
   margin: 5vh 0 0 -10px;
+  z-index: 9999;
 }
 @media screen and (max-width: 767px) {
   #pagination-dots {
@@ -340,12 +341,14 @@ p.viz-caption a:hover svg {
 
 #pagination-dots li.selected div {
   opacity: 1;
-  border: 1px solid white;
-  border-radius: 50%;
+  /* border: 1px solid white;
+  border-radius: 50%; */
 }
 
 #pagination-dots li.selected div div {
-  box-shadow: none;
+  /* box-shadow: none; */
+  box-shadow: 0px 0px 10px 4px white;
+  backdrop-filter: blur(2px);
 }
 /* Request link */
 
@@ -475,7 +478,7 @@ Copy area
   overflow-y: scroll;
   clip-path: polygon(
     50% 0px,
-    100% 0,
+    100% 0, 100% 50%, 70% 50%, 70% 80%,95% 80%, 95% 50%, 100% 50%,
     100% 100%,
     50% 100%,
     50% 80%,
@@ -584,17 +587,41 @@ div#quake-info {
   position: fixed;
   display: block;
   z-index: 10;
-  top: 0;
+  /* top: 0;
   left: 0;
   margin: 0 0 0 2vh;
-  max-width: 20vw;
+  max-width: 20vw; */
 }
 
-div#quake-info div {
+div#quake-info > div {
   overflow: hidden;
-  transform: translate3d(0, -14px, 0);
+  transform: translate(-50%, -90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+div#quake-info > div.in {
+  opacity: 1;
+}
+div#quake-info div div {
+  background: #930096;
+  padding: 5px 10px;
+  color: white;
+}
+div#quake-info div div h1{
+  font-size: 14px;
+  font-weight: 400;
+}
+div#quake-info div div span{
+  font-size: 11px;
 }
 
+div#quake-info div canvas{
+  width: 100px;
+  height: 45px;
+}
+/* 
 div#quake-info span {
   display: inline-block;
   padding: 0.6em 0.8em;
@@ -609,7 +636,7 @@ div#quake-info span {
 div#quake-info span.in {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
+} */
 
 div#quake-info strong {
   display: block;
@@ -904,13 +931,14 @@ Animation Keyframs
   left: 50%;
   bottom: 10%;
   z-index: 12;
+  transform: translate(-50%, 0);
   display: none;
 }
-/* @media screen and (max-width: 767px) { //ericleee
+@media screen and (max-width: 767px) {
   #zoom {
     display: block;
   }
-} */
+}
 
 #globeViz {
   position: absolute;
@@ -955,7 +983,7 @@ Animation Keyframs
 }
 
 .label .expanded{
-  display: none;
+  /* display: none; */
   flex-direction: column;
   color: white;
   position: absolute;

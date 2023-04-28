@@ -75,7 +75,10 @@
     <script src="./js_files/Model.js"></script>
     <script src="./js_files/LatLng.js"></script>
     <script src="./js_files/ProjectionUtil.js"></script>
-
+    <script src="./js_files/back1.js"></script>
+    <script src="./js_files/back2.js"></script>
+    <script src="./js_files/back3.js"></script>
+    
     <script src="./js_files/Animation.js"></script>
     <script src="./js_files/Ease.js"></script>
     <script src="./js_files/Ajax.js"></script>
@@ -125,8 +128,15 @@
       id="quake-info"
       style="transform: translate3d(496.078px, 423.447px, 0px)"
     >
-      <div>
+      <!-- <div>
         <span class="in"><strong>Traccy AG</strong>Switzerland</span>
+      </div> -->
+      <div>
+        <div>
+          <span>Traccy AG</span>
+          <h1>Switerland</h1>
+        </div>
+        <canvas id="pointer"  width="100" height="40"></canvas>
       </div>
     </div>
 
@@ -157,7 +167,7 @@
           width: 78vw !important;
           height: 70vw !important;
           top: auto;
-          bottom: -32.5vw;
+          bottom: -26.5vw;
           left: 13.5%;
         }
       }
@@ -530,7 +540,7 @@
     <script src="./js_files/WebFontLoader.js"></script>
 
     <!-- ----------------------------------------------------------- -->
-    <button id="zoom">zoom</button>
+    <button id="zoom">tap to interact</button>
 
     <script
       async
@@ -795,6 +805,7 @@
         let scrolling = document.getElementById("scrolling-wrapper");
         let gauge = document.getElementById("svg_id");
         let header = document.getElementById("header");
+        let quakeInfo = document.getElementById("quake-info");
 
         if (Site.isCollapse) {
           globe.style.transform = "translate(-66%, -13%)";
@@ -812,6 +823,7 @@
           scrolling.style.opacity = 1;
           gauge.style.opacity = 1;
           header.style.opacity = 1;
+          quakeInfo.style.transform="translate(-10000px, 0)"
         }
 
         Site.isCollapse = !Site.isCollapse;
@@ -883,7 +895,8 @@
           }
         }
       };
-      setInterval(handleMarker, 2000);
+      //setInterval(handleMarker, 2000); //ericleee
+
       //const targetNode = document.getElementById("globeViz");
       //const config = { attributes: true, childList: true, subtree: true };
       //const callback = (mutationList, observer) => {

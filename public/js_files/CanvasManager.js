@@ -27,7 +27,7 @@ Site.CanvasManager = function () {
 
   this.init = function () {
     this.quakeInfo = document.getElementById("quake-info");
-    this.quakeInfoSpan = this.quakeInfo.getElementsByTagName("span")[0];
+    this.quakeInfoSpan = this.quakeInfo.getElementsByTagName("div")[0];
 
     this.canvas = document.getElementById("globekit-canvas");
     this.camera = new GK.Camera(220, this.canvas.width / this.canvas.height, 0.1, 1000.0);
@@ -61,9 +61,9 @@ Site.CanvasManager = function () {
     var m = self.globe.modelMatrix;
     mat4.identity(m);
     // make -500 to higher value -650 to make globe small
-    let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 18;
-    let xpos = 8.3 * Site.scale;
-    let ypos = -(1 - Site.scale) * 17;
+    let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 12 + 2;
+    let xpos = -6.3 * Site.scale;
+    let ypos = -(1 - Site.scale) * 17 + 1.5;
     mat4.translate(m, m, [xpos, ypos, -500.0]);
     mat4.scale(m, m, [scale, scale, scale]);
     // mat4.translate(m, m, [8.3, 0.0, -500.0]);
@@ -126,7 +126,8 @@ Site.CanvasManager = function () {
     self.bokeh.draw(self.camera, timestamp);
     self.quakes.draw(self.camera, timestamp);
 
-    if (Site.ww > 703) {
+    // if (Site.ww > 703) { //ericleee
+    if(Site.isMobile == false || Site.isCollapse == false){
       self.bigQuake.draw(self.camera, timestamp);
       self.updateSelectedQuake();
     }
@@ -194,14 +195,32 @@ Site.CanvasManager = function () {
   }
 
   this.updateQuakeInfo = function (quake) {
-    self.quakeInfoSpan.innerHTML = "<strong>" +
-      quake.data.properties.mag + "</strong>" +
-      quake.data.properties.place;
+    // self.quakeInfoSpan.innerHTML = "<strong>" +
+    //   quake.data.properties.mag + "</strong>" +
+    //   quake.data.properties.place;
+    self.quakeInfoSpan.innerHTML = `
+        <div>
+          <span>${quake.data.properties.mag}</span>
+          <h1>${quake.data.properties.place}</h1>
+        </div>
+        <canvas id="pointer" width="100" height="45"></canvas>
+    `;
+    // console.log(self.quakeInfoSpan, quake, self.quakeInfoSpan.innerHTML)
+
+    setTimeout(() => {
+    var c = document.getElementById("pointer");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(60, 0);
+    ctx.bezierCurveTo(50, 10, 45, 20, 50, 45);
+    ctx.strokeStyle = "#930096";
+    ctx.stroke();
+    }, 100);
   }
 
   this.quakePulse = function () {
     var quake = self.getPertinentQuake();
-    if(quake == undefined) return;
+    if (quake == undefined) return;
     var dir = vec3.clone(quake.pos);
     vec3.normalize(dir, dir);
 
