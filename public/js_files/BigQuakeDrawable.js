@@ -28,7 +28,7 @@ GK.BigQuakeDrawable = function(){
             vTime = uTime;
 
             //gl_PointSize = uPointSize + (uPointSize * t);
-            gl_PointSize = uPointSize * 1.5;
+            gl_PointSize = uPointSize * 0.5;
             gl_Position = uPMatrix * uMVMatrix * vec4(pos, 1.0);
         }
     `;

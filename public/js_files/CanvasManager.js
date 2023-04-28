@@ -61,13 +61,13 @@ Site.CanvasManager = function () {
     var m = self.globe.modelMatrix;
     mat4.identity(m);
     // make -500 to higher value -650 to make globe small
-    // let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 18;
-    // let xpos = 8.3 * Site.scale;
-    // let ypos = -(1 - Site.scale) * 17;
-    // mat4.translate(m, m, [xpos, ypos, -500.0]);
-    // mat4.scale(m, m, [scale, scale, scale]);
-    mat4.translate(m, m, [8.3, 0.0, -500.0]);
-    mat4.scale(m, m, [18.0, 18.0, 18.0]);
+    let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 18;
+    let xpos = 8.3 * Site.scale;
+    let ypos = -(1 - Site.scale) * 17;
+    mat4.translate(m, m, [xpos, ypos, -500.0]);
+    mat4.scale(m, m, [scale, scale, scale]);
+    // mat4.translate(m, m, [8.3, 0.0, -500.0]);
+    // mat4.scale(m, m, [18.0, 18.0, 18.0]);
     mat4.rotateX(m, m, sinTime);
     mat4.rotateY(m, m, slowTime);
 
@@ -82,13 +82,13 @@ Site.CanvasManager = function () {
     mat4.identity(m);
 
 
-    // scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 21;
-    // xpos = 9 * Site.scale;
-    // ypos = -(1 - Site.scale) * 19;
-    // mat4.translate(m, m, [xpos, ypos, -550.0]);
-    // mat4.scale(m, m, [scale, scale, scale]);
-    mat4.translate(m, m, [9.0, 0.0, -550.0]);
-    mat4.scale(m, m, [21.0, 21.0, 21.0]);
+    scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 21;
+    xpos = 9 * Site.scale;
+    ypos = -(1 - Site.scale) * 19;
+    mat4.translate(m, m, [xpos, ypos, -550.0]);
+    mat4.scale(m, m, [scale, scale, scale]);
+    // mat4.translate(m, m, [9.0, 0.0, -550.0]);
+    // mat4.scale(m, m, [21.0, 21.0, 21.0]);
     mat4.rotateY(m, m, 0);
     mat4.rotateX(m, m, 0);
     mat4.rotateZ(m, m, -0.8)

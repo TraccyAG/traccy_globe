@@ -37,7 +37,7 @@ GK.EarthquakeDrawable = function () {
             float pointSize = uPointSize + min(uPointSize * pow(aMagnitude / 5.0, 8.0), 14.0);
             pointSize = pointSize + (8.0 * pow(vAnimP, 9.0));
 
-            gl_PointSize = pointSize * 1.5;
+            gl_PointSize = pointSize * 0.5;
             gl_Position = uPMatrix * mvPosition;
         }
     `;
