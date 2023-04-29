@@ -61,7 +61,6 @@ Site.CanvasManager = function () {
     var m = self.globe.modelMatrix;
     mat4.identity(m);
     // make -500 to higher value -650 to make globe small
-    console.log(Site.isMobile)
     if (Site.isMobile) {
       let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 12 + 2;
       let xpos = -6.3 * Site.scale;
@@ -86,15 +85,16 @@ Site.CanvasManager = function () {
     m = self.ring.modelMatrix;
     mat4.identity(m);
 
-
-    // scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 21;
-    // xpos = 9 * Site.scale;
-    // ypos = -(1 - Site.scale) * 19;
-    // mat4.translate(m, m, [xpos, ypos, -550.0]);
-    // mat4.scale(m, m, [scale, scale, scale]);
-    mat4.translate(m, m, [9.0, 0.0, -550.0]);
-    mat4.scale(m, m, [21.0, 21.0, 21.0]);
-
+    if (Site.isMobile) {
+      let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 21;
+      let xpos = 9 * Site.scale;
+      let ypos = -(1 - Site.scale) * 19;
+      mat4.translate(m, m, [xpos, ypos, -550.0]);
+      mat4.scale(m, m, [scale, scale, scale]);
+    } else {
+      mat4.translate(m, m, [9.0, 0.0, -550.0]);
+      mat4.scale(m, m, [21.0, 21.0, 21.0]);
+    }
     mat4.rotateY(m, m, 0);
     mat4.rotateX(m, m, 0);
     mat4.rotateZ(m, m, -0.8)
