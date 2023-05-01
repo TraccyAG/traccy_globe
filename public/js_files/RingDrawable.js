@@ -122,18 +122,18 @@ GK.RingDrawable = function () {
         gl.enableVertexAttribArray(program.attributes.aNormal);
         gl.enableVertexAttribArray(program.attributes.aTexture);
 
-        if(Site.isCollapse){
-            // Draw background ring
-            gl.uniform1f(program.uniforms.uProgress, 1.0);
-            gl.uniform1f(program.uniforms.uRingAlpha, this.bgAlpha);
-            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-            gl.drawElements(gl.TRIANGLES, indexCount, gl.UNSIGNED_SHORT, 0);
+        // if(Site.isCollapse){
+        //     // Draw background ring
+        //     gl.uniform1f(program.uniforms.uProgress, 1.0);
+        //     gl.uniform1f(program.uniforms.uRingAlpha, this.bgAlpha);
+        //     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+        //     gl.drawElements(gl.TRIANGLES, indexCount, gl.UNSIGNED_SHORT, 0);
 
-            // Draw foreground ring
-            gl.uniform1f(program.uniforms.uProgress, this.progress);
-            gl.uniform1f(program.uniforms.uRingAlpha, this.fgAlpha);
-            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-            gl.drawElements(gl.TRIANGLES, indexCount, gl.UNSIGNED_SHORT, 0);
-        }
+        //     // Draw foreground ring
+        //     gl.uniform1f(program.uniforms.uProgress, this.progress);
+        //     gl.uniform1f(program.uniforms.uRingAlpha, this.fgAlpha);
+        //     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+        //     gl.drawElements(gl.TRIANGLES, indexCount, gl.UNSIGNED_SHORT, 0);
+        // }
     }
 }
