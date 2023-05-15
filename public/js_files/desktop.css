@@ -183,6 +183,7 @@ Stationary content
 
 .social-icons a {
   padding: 4px 8px;
+  display: flex;
 }
 
 /* Pagination (text) */
@@ -408,7 +409,7 @@ p.viz-caption a:hover svg {
   background: transparent;
   fill: white;
   height: 100%;
-  margin-left: 100px;
+  margin-left: 82px;
   position: relative;
   z-index: 1;
   display: flex;
