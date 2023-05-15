@@ -586,7 +586,7 @@ Copy area
     font-size: 34px !important;
   }
   .copy-section p {
-    font-size: 8px !important;
+    font-size: 12px !important;
     max-width: 250px !important;
   }
 }
@@ -1011,9 +1011,11 @@ Animation Keyframs
 #zoom {
   position: absolute;
   left: 50%;
-  bottom: 10%;
+  bottom: 7%;
   z-index: 12;
   transform: translate(-50%, 0);
+  padding: 10px 20px;
+  font-weight: 600;
   display: none;
 }
 @media screen and (max-width: 767px) {

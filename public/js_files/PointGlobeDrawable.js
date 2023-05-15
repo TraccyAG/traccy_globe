@@ -166,7 +166,10 @@ GK.PointGlobeDrawable = function () {
         gl.uniformMatrix4fv(this.program.uniforms.uPMatrix, false, camera.perspectiveMatrix);
         gl.uniformMatrix4fv(this.program.uniforms.uMVMatrix, false, this.modelMatrix);
         gl.uniform1f(this.program.uniforms.uOffsetPower, this.offsetPower);
-        gl.uniform1f(this.program.uniforms.uPointSize, this.pointSize);
+        if (Site.isCollapse)
+            gl.uniform1f(this.program.uniforms.uPointSize, this.pointSize * 0.7);
+        else
+            gl.uniform1f(this.program.uniforms.uPointSize, this.pointSize);
         gl.uniform1f(this.program.uniforms.uTime, time * this.shaderSpeed);
         gl.uniform1f(this.program.uniforms.uAlpha, this.alpha);
 

@@ -62,7 +62,7 @@ Site.CanvasManager = function () {
     mat4.identity(m);
     // make -500 to higher value -650 to make globe small
     if (Site.isMobile) {
-      let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 12 + 2;
+      let scale = ((1 - window.innerWidth / 1024) * Site.scale + window.innerWidth / 1024) * 12 + 5;
       let xpos = -6.3 * Site.scale;
       let ypos = -(1 - Site.scale) * 17 + 1.5;
       mat4.translate(m, m, [xpos, ypos, -500.0]);
