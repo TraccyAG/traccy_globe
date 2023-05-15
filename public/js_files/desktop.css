@@ -155,6 +155,7 @@ Stationary content
   align-items: center;
   color: #ffffff;
   font-weight: lighter;
+  z-index: 11;
 }
 
 @media only screen and (max-width: 767px) {
@@ -353,11 +354,17 @@ p.viz-caption a:hover svg {
 }
 /* Request link */
 
+#request-wrapper {
+  text-decoration: none;;
+}
 #request {
-  position: absolute;
+  /* position: absolute; */
   z-index: 10;
-  bottom: 46px;
-  left: 5.5vw;
+  /* bottom: 46px; */
+  /* left: 5.5vw; */
+  position: relative;
+  margin-top: 50px;
+  
   width: 279px;
   height: 67px;
   font-size: 16px;
