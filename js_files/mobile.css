@@ -101,7 +101,7 @@ Content height no longer tied to vh
         padding: 1px 0;
     }
     .copy-section {
-        height: auto;
+        /* height: auto; */
         margin: 70px 0;
     }
     .copy-section.topic-form {

@@ -136,7 +136,7 @@ Site.ScrollManager = function () {
 
         var copySectionDivs = document.getElementsByClassName("copy-section");
         copySectionDivs = Array.prototype.slice.call(copySectionDivs);
-        if (Site.isMobile) {
+        if (!Site.isMobile) {
             copySectionDivs.pop();
         }
 
