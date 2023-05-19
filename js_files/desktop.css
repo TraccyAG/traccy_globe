@@ -92,7 +92,7 @@ Stationary content
 .header .logo-mark img {
   max-height: 45px;
 }
-.header .logo-mark p{
+.header .logo-mark p {
   margin-left: 15px;
   padding-left: 15px;
   font-size: 11px;
@@ -104,12 +104,12 @@ Stationary content
       display: none;
   } */
 }
-.header .logo-mark p::before{
-  content: ' ';
+.header .logo-mark p::before {
+  content: " ";
   display: block;
   height: 100%;
   width: 0.5px;
-  background: #FFFFFF80;
+  background: #ffffff80;
   position: absolute;
   left: 0;
 }
@@ -355,7 +355,7 @@ p.viz-caption a:hover svg {
 /* Request link */
 
 #request-wrapper {
-  text-decoration: none;;
+  text-decoration: none;
 }
 #request {
   /* position: absolute; */
@@ -364,7 +364,7 @@ p.viz-caption a:hover svg {
   /* left: 5.5vw; */
   position: relative;
   margin-top: 50px;
-  
+
   width: 279px;
   height: 67px;
   font-size: 16px;
@@ -486,7 +486,13 @@ Copy area
   overflow-y: scroll;
   clip-path: polygon(
     50% 0px,
-    100% 0, 100% 50%, 70% 50%, 70% 80%,95% 80%, 95% 50%, 100% 50%,
+    100% 0,
+    100% 50%,
+    70% 50%,
+    70% 80%,
+    95% 80%,
+    95% 50%,
+    100% 50%,
     100% 100%,
     50% 100%,
     50% 80%,
@@ -507,7 +513,7 @@ Copy area
       0% 75%,
       0 150px,
       90% 150px
-    )
+    );
   }
 }
 #scrolling-content {
@@ -532,9 +538,20 @@ Copy area
   height: 50vh;
   transform: translateZ(0);
 }
-.copy-section.blank-section{
-  visibility: none;
+.copy-section.blank-section {
+  visibility: hidden;
   height: 0px !important;
+}
+
+@media screen and (max-width: 767px) and (max-width: 670px) {
+  .copy-section.blank-section {
+    height: 10vh !important;
+  }
+}
+@media screen and (max-width: 767px) and (max-width: 1000px) {
+  .copy-section.blank-section {
+    height: 30vh !important;
+  }
 }
 .copy-content {
   position: absolute;
@@ -550,7 +567,7 @@ Copy area
   font-weight: 300;
   letter-spacing: -0.1vw;
   line-height: 1em;
-  color: #BE1E73;
+  color: #be1e73;
 }
 
 .copy-section p {
@@ -632,14 +649,14 @@ Copy area
     align-items: center;
   }
 }
-.copy-section h2 span{
+.copy-section h2 span {
   text-decoration-line: line-through;
   padding: 0 5px;
 }
-.copy-section .learn-more-mobile h3{
+.copy-section .learn-more-mobile h3 {
   font-size: 16px;
 }
-.copy-section .learn-more-mobile svg{
+.copy-section .learn-more-mobile svg {
   margin-left: 10px;
 }
 
@@ -697,19 +714,19 @@ div#quake-info > div.in {
   opacity: 1;
 }
 div#quake-info div div {
-  background: #BE1E73;
+  background: #be1e73;
   padding: 5px 10px;
   color: white;
 }
-div#quake-info div div h1{
+div#quake-info div div h1 {
   font-size: 14px;
   font-weight: 400;
 }
-div#quake-info div div span{
+div#quake-info div div span {
   font-size: 11px;
 }
 
-div#quake-info div canvas{
+div#quake-info div canvas {
   width: 100px;
   height: 45px;
 }
@@ -1076,7 +1093,7 @@ Animation Keyframs
   align-items: center;
 }
 
-.label .expanded{
+.label .expanded {
   /* display: none; */
   flex-direction: column;
   color: white;
@@ -1088,7 +1105,7 @@ Animation Keyframs
   background: black;
 }
 
-.label .expanded span{
+.label .expanded span {
   white-space: nowrap;
   font-size: 12px;
 }
@@ -1097,7 +1114,7 @@ Animation Keyframs
   font-size: 16px;
 }
 
-.label .expanded .splitter{
+.label .expanded .splitter {
   width: 100%;
   height: 1px;
   border-bottom: 1px solid gray;
@@ -1107,4 +1124,3 @@ Animation Keyframs
 .label .expanded h2 {
   font-size: 12px;
 }
-
