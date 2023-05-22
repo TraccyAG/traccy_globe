@@ -21,7 +21,7 @@ Site.DataManager = function () {
                 // self.loadSignal.fire();
                 // console.log(self);
                 for (var i = 0; i < locationData.length; i++) {
-                    var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], locationData[i]["project"], locationData[i].link, i);
+                    var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], locationData[i]["project"], locationData[i]["link"], i);
                     self.earthquakes.push(new Site.DataManager.Earthquake(feature));
                 }
 

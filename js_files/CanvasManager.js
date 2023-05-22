@@ -205,7 +205,7 @@ Site.CanvasManager = function () {
     //   quake.data.properties.mag + "</strong>" +
     //   quake.data.properties.place;
     self.quakeInfoSpan.innerHTML = `
-        <a href=${quake.data.url}>
+        <a href=${quake.data.properties.url}>
           <span>${quake.data.properties.mag}</span>
           <h1>${quake.data.properties.place}</h1>
         </a>
