@@ -21,7 +21,7 @@ Site.DataManager = function () {
                 // self.loadSignal.fire();
                 // console.log(self);
                 for (var i = 0; i < locationData.length; i++) {
-                    var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], locationData[i]["project"], i);
+                    var feature = locationToData(locationData[i]["cord"], locationData[i]["country"], locationData[i]["project"], locationData[i].link, i);
                     self.earthquakes.push(new Site.DataManager.Earthquake(feature));
                 }
 
@@ -46,17 +46,41 @@ Site.DataManager.Earthquake = function (data) {
 }
 
 var locationData = [
-    { "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy AG" }, 
-    { "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy Connect" }, 
-    { "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Traccy Solar" }, 
-    { "country": "Indonesia(jakarta)", "cord": [106.8, 6.2,10], "project": "Lynx VR" }, 
-    { "country": "Indonesia(Semarang)", "cord": [110.4, 7, 10], "project": "Green Protocol" }, 
-    { "country": "Indonesia(Megalang)", "cord": [110.2, 7.4, 10], "project": "DecentaCity" }, 
-    { "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Tomato Project" }, 
-    { "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution"}
+    {
+        "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy AG",
+        "link": "https://traccy.io/impact-through-traccy-details/traccy-lab"
+    },
+    {
+        "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy Connect",
+        "link": "https://traccy.io/impact-through-traccy-details/traccy-connect"
+    },
+    {
+        "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Traccy Solar",
+        "link": "https://traccy.io/impact-through-traccy-details/traccy-solar"
+    },
+    {
+        "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Lynx VR",
+        "link": "https://traccy.io/impact-through-traccy-details/lynx"
+    },
+    {
+        "country": "Indonesia(Semarang)", "cord": [110.4, 7, 10], "project": "Green Protocol",
+        "link": "https://traccy.io/impact-through-traccy-details/green-protocol"
+    },
+    {
+        "country": "Indonesia(Megalang)", "cord": [110.2, 7.4, 10], "project": "DecentaCity",
+        "link": "https://traccy.io/impact-through-traccy-details/flyout"
+    },
+    {
+        "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Tomato Project",
+        "link": "https://traccy.io/impact-through-traccy-details/traccy-farm"
+    },
+    {
+        "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution",
+        "link": "https://traccy.io/impact-through-traccy-details/flyout"
+    }
 ];
 
-function locationToData(cord, country, project, index) {
+function locationToData(cord, country, project, link, index) {
     return {
         "type": "Feature",
         "properties": {
@@ -65,7 +89,7 @@ function locationToData(cord, country, project, index) {
             "time": 1668608610763,
             "updated": 1668610186040,
             "tz": null,
-            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000iq4j",
+            "url": link,
             "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us7000iq4j.geojson",
             "felt": null,
             "cdi": null,

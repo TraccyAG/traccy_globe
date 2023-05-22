@@ -205,10 +205,10 @@ Site.CanvasManager = function () {
     //   quake.data.properties.mag + "</strong>" +
     //   quake.data.properties.place;
     self.quakeInfoSpan.innerHTML = `
-        <div>
+        <a href=${quake.data.url}>
           <span>${quake.data.properties.mag}</span>
           <h1>${quake.data.properties.place}</h1>
-        </div>
+        </a>
         <canvas id="pointer" width="100" height="45"></canvas>
     `;
     // console.log(self.quakeInfoSpan, quake, self.quakeInfoSpan.innerHTML)

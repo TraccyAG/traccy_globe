@@ -56,6 +56,14 @@ Site = {
 
         var bodyClass = (Site.isMobile) ? "mobile" : "desktop";
         document.body.classList.add(bodyClass);
+
+        if (Site.isMobile) {
+            const globe_svg = document.getElementById("svg_id");
+            globe_svg.style.display = "none";
+
+            const zoom = document.getElementById("zoom");
+            zoom.style.display = "block";
+        }
     },
 
     getGlobePointSize: function () {
@@ -132,7 +140,7 @@ Site = {
                 Site.canvasManager.ring.progress = Site.scrollManager.getScrollPercent();
                 Site.scrollManager.windowDidScroll();
             });
-            
+
             let scrollingWrapper = document.getElementById("scrolling-wrapper");
             scrollingWrapper.addEventListener("scroll", function () {
                 Site.canvasManager.ring.progress = Site.scrollManager.getScrollPercent();
@@ -268,7 +276,7 @@ Site = {
 Site.isMobile = (window.orientation !== undefined) || (navigator.userAgent.indexOf("IEMobile") !== -1);
 Site.isDesktop = !Site.isMobile;
 Site.isCollapse = Site.isMobile;
-Site.scale = Site.isCollapse? 0 : 1;
+Site.scale = Site.isCollapse ? 0 : 1;
 
 Site.debounce = function debounce(func, wait, immediate) {
     var timeout;

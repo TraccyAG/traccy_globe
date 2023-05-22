@@ -713,16 +713,17 @@ div#quake-info > div {
 div#quake-info > div.in {
   opacity: 1;
 }
-div#quake-info div div {
+div#quake-info div a {
   background: #be1e73;
   padding: 5px 10px;
   color: white;
+  text-decoration: none;
 }
-div#quake-info div div h1 {
+div#quake-info div a h1 {
   font-size: 14px;
   font-weight: 400;
 }
-div#quake-info div div span {
+div#quake-info div a span {
   font-size: 11px;
 }
 
