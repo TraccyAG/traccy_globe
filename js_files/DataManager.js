@@ -48,35 +48,35 @@ Site.DataManager.Earthquake = function (data) {
 var locationData = [
     {
         "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy AG",
-        "link": "https://traccy.io/impact-through-traccy-details/traccy-lab"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/traccy-lab"
     },
     {
         "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy Connect",
-        "link": "https://traccy.io/impact-through-traccy-details/traccy-connect"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/traccy-connect"
     },
     {
         "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Traccy Solar",
-        "link": "https://traccy.io/impact-through-traccy-details/traccy-solar"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/traccy-solar"
     },
     {
         "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Lynx VR",
-        "link": "https://traccy.io/impact-through-traccy-details/lynx"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/lynx"
     },
     {
         "country": "Indonesia(Semarang)", "cord": [110.4, 7, 10], "project": "Green Protocol",
-        "link": "https://traccy.io/impact-through-traccy-details/green-protocol"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/green-protocol"
     },
     {
         "country": "Indonesia(Megalang)", "cord": [110.2, 7.4, 10], "project": "DecentaCity",
-        "link": "https://traccy.io/impact-through-traccy-details/flyout"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/flyout"
     },
     {
         "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Tomato Project",
-        "link": "https://traccy.io/impact-through-traccy-details/traccy-farm"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/traccy-farm"
     },
     {
         "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution",
-        "link": "https://traccy.io/impact-through-traccy-details/flyout"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/flyout"
     }
 ];
 
