@@ -48,7 +48,7 @@ Site.DataManager.Earthquake = function (data) {
 var locationData = [
     {
         "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy AG",
-        "link": "https://portal.traccy.io/impact-through-traccy-details/traccy-lab"
+        "link": "https://portal.traccy.io/impact-through-traccy-details/become-part"
     },
     {
         "country": "Switzerland", "cord": [8.22, 46.8, 10], "project": "Traccy Connect",
