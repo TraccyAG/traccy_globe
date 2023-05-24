@@ -91,6 +91,7 @@ Stationary content
 
 .header .logo-mark img {
   max-height: 45px;
+  object-fit: contain;
 }
 .header .logo-mark p {
   margin-left: 15px;
