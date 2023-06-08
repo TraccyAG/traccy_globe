@@ -74,10 +74,10 @@ var locationData = [
         "country": "DRC Congo", "cord": [21.75, 4.0, 10], "project": "Tomato Project",
         "link": "https://portal.traccy.io/impact-through-traccy-details/traccy-farm"
     },
-    {
-        "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution",
-        "link": "https://portal.traccy.io/impact-through-traccy-details/flyout"
-    }
+    // {
+    //     "country": "Indonesia(jakarta)", "cord": [106.8, 6.2, 10], "project": "Mosquito Solution",
+    //     "link": "https://portal.traccy.io/impact-through-traccy-details/flyout"
+    // }
 ];
 
 function locationToData(cord, country, project, link, index) {
