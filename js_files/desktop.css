@@ -83,11 +83,12 @@ Stationary content
   display: block;
   width: 20px;
 }
-/* @media screen and (max-width: 767px) {
-  .header .right-menu svg {
-    fill: black;
+@media screen and (max-width: 430px) {
+  .header{
+    display: flex;
+    flex-direction: column;
   }
-} */
+}
 
 .header .logo-mark img {
   max-height: 45px;
@@ -1125,4 +1126,15 @@ Animation Keyframs
 
 .label .expanded h2 {
   font-size: 12px;
+}
+.button-launch-portal{
+  width: 140px;
+  height: 35px !important;
+  background: #93054f !important;
+  color: white !important;
+  border-radius: 5px !important;
+  margin: 0 10px 0 0;
+  padding: 0 !important;
+  border: none;
+  font-size: 15px;
 }
